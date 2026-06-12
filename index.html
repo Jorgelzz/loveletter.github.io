@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nossas Memórias</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<audio
+    id="backgroundMusic"
+    src="audio/harry-styles-sign-of-the-times-official-video-youtubemp3free.org.mp3"
+    preload="auto"
+    loop
+></audio>
+<body>
+    <main>
+        <!-- Tela inicial -->
+        <section class="intro" id="intro">
+            <button class="click-button" id="clickButton" type="button">
+                Me clique
+            </button>
+        </section>
+
+        <!-- Coração que cobre a tela -->
+        <div class="heart-transition" id="heartTransition" aria-hidden="true"></div>
+
+        <!-- Conteúdo principal -->
+        <section class="memories" id="memories" aria-hidden="true">
+            <!-- Fundo animado -->
+            <div class="hearts-background" id="heartsBackground" aria-hidden="true"></div>
+
+            <!-- Área deslizante -->
+            <div class="pages-viewport">
+                <div class="pages-track" id="pagesTrack">
+
+                    <!-- =========================
+                         Página 1: fotos
+                    ========================== -->
+                    <section class="page photos-page" aria-label="Galeria de fotos">
+                        <div class="content">
+                            <header class="memories-header">
+                                <h1 class="title">
+                                    Nossas memórias
+                                </h1>
+                            </header>
+
+                            <div class="photos-layout">
+                                <div class="photo-gallery">
+                                    <!-- Polaroid 1 -->
+                                    <article class="polaroid" style="
+                                            --rotation: -5deg;
+                                            --delay: 0.15s;
+                                        ">
+                                        <div class="photo-frame">
+                                            <div class="placeholder-content">
+                                                </span>
+
+                                                <span class="placeholder-text">
+                                                    <img src="/images/foto-1.jpeg" alt="">
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <p class="caption">
+                                        Esquilinho fofo
+                                        </p>
+                                    </article>
+
+                                    <!-- Polaroid 2 -->
+                                    <article class="polaroid" style="
+                                            --rotation: 4deg;
+                                            --delay: 0.35s;
+                                        ">
+                                        <div class="photo-frame">
+                                            <div class="placeholder-content">
+                                                <span class="placeholder-text">
+                                                    <img src="/images/foto-2.jpeg" alt="">
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <p class="caption">
+                                            Sempre ao seu lado!
+                                        </p>
+                                    </article>
+
+                                    <!-- Polaroid 3 -->
+                                    <article class="polaroid" style="
+                                            --rotation: -3deg;
+                                            --delay: 0.55s;
+                                        ">
+                                        <div class="photo-frame">
+                                            <div class="placeholder-content">
+                                                <span class="placeholder-icon" aria-hidden="true">
+                                                    ♡
+                                                </span>
+
+                                                <span class="placeholder-text">
+                                                    <img src="/images/foto-3.jpeg" alt="">
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <p class="caption">
+                                            Minha pessoa favorita
+                                        </p>
+                                    </article>
+                                </div>
+
+                                <!-- Botão para a próxima página -->
+                                <button class="page-arrow next-page-button" id="nextPageButton" type="button"
+                                    aria-label="Ir para a carta">
+                                    <span class="arrow-symbol">➜</span>
+                                    <span class="arrow-text">
+                                        Abra sua carta
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- =========================
+                         Página 2: envelope
+                    ========================== -->
+                    <section class="page letter-page" aria-label="Carta">
+                        <button class="back-button" id="backButton" type="button" aria-label="Voltar para as fotos">
+                            ← Voltar
+                        </button>
+
+                        <div class="letter-page-content">
+                            <header class="letter-header">
+                                <h2 class="letter-title">
+                                    Uma carta para você
+                                </h2>
+
+                                <p class="letter-subtitle">
+                                    Clique no envelope para abrir.
+                                </p>
+                            </header>
+
+                            <!-- Envelope -->
+                            <button class="envelope" id="envelope" type="button" aria-label="Abrir carta"
+                                aria-expanded="false">
+                                <span class="envelope-back"></span>
+
+                                <span class="letter-preview">
+                                    <span class="preview-heart">
+                                        ♥
+                                    </span>
+                                </span>
+
+                                <span class="envelope-front"></span>
+
+                                <span class="envelope-flap"></span>
+
+                                <span class="envelope-seal">
+                                    J + G
+                                </span>
+                            </button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Popup da carta -->
+    <div class="letter-modal" id="letterModal" aria-hidden="true">
+        <div class="letter-overlay" id="letterOverlay"></div>
+
+        <article class="letter-paper" role="dialog" aria-modal="true" aria-labelledby="letterPaperTitle">
+            <button class="close-letter-button" id="closeLetterButton" type="button" aria-label="Fechar carta">
+                ×
+            </button>
+
+            <div class="paper-decoration">
+                ♥
+            </div>
+
+            <h2 class="paper-title" id="letterPaperTitle">
+                Para a minha amada Gabi.
+            </h2>
+
+            <div class="paper-text">
+                <p>
+                    Meu amor, hoje eu quero te dizer algo muito importante,
+                </p>
+                <p>
+                    Te amo de montão e sempre lembre-se disso, apesar de tudo que passamos e iremos passar, sempre vou te amar milhões.
+                    Ultimamente as coisas vem sendo dificil mas com certeza tudo isso vai valer a pena, e vamos aproveitar bastante, viajando
+                    e tirando um tempo só pra gente. Apesar de hoje em dia não poder te dar tudo que você realmente merece, eu prometo que 
+                    vou me esforçar ao máximo para te dar o mundo, ou pelo menos um pedacinho dele, porque você merece isso e muito mais. 
+                    Obrigado por ser quem você é, por estar ao meu lado e por me fazer tão feliz. Eu te amo de verdade.
+                </p>
+                <p class="paper-signature">
+                    Com carinho e amor,<br>
+                    Jorge
+                </p>
+            </div>
+        </article>
+    </div>
+
+    <script src="scripts.js" defer></script>
+    <script src="audio.js" defer></script>
+</body>
+
+</html>
